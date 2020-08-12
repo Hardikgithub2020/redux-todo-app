@@ -8,7 +8,7 @@ function App() {
     <div className="main">
       <h2 className="title">  Checklist  </h2>
       <TodoList />
-      <LastItemDisplay />
+      {/* <LastItemDisplay /> */}
     </div>
   );
 }

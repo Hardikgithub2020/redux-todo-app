@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../syles/TodoList.css';
+import LastitemDisplay from './LastItemDisplay';
 
 export default class TodoList extends Component {
   constructor() {
@@ -42,10 +43,12 @@ export default class TodoList extends Component {
     // loop through all todo items in state using map() 
     // & render a <h5> tag for each todo item
     // -------------------------------------------------
+    
     const listOfItems = this.state.savedTodoItems.map((item, index) => {
       // console.log("testing list items****", id)
       return (<div id="item-wrapper" key={index}><p id="item" >{item}</p> </div>)
-    })
+    });
+    const leng = listOfItems.length;
 
     return (
       <div className="todo">
@@ -60,6 +63,7 @@ export default class TodoList extends Component {
         </form>        
         {/* here we are rendering the <h5>'s that we made earlier using the variable "listOfItems" */}
         {listOfItems}
+        <LastitemDisplay value ={listOfItems[leng -1]}/>
       </div>
     )
   }

@@ -8,10 +8,14 @@ import '../syles/LastItemDisplay.css';
 // -------------------------------------------------------------------
 
 export default class LastItemDisplay extends Component {
+  constructor(props){
+    super(props)
+  }
   render() {
     return (
       <div id="last-item-display">
-        <h4> last item display </h4>
+        <h4> last item display : {this.props.value}</h4>
+        
       </div>
     )
   }
